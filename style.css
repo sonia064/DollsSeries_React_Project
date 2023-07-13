@@ -1,0 +1,358 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  
+}
+
+
+#root {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+
+#bottom-section {
+  background-color: #5affef;
+  padding: 30px;
+  text-align: center;
+  font-size: 20px;
+  color: blue;
+}
+
+
+@keyframes shine {
+  from {
+    background-position: -300px 0;
+  }
+  to {
+    background-position: calc(300px + 50%) 0;
+  }
+}
+
+#top-section {
+  background-color: #5affef;
+  padding: 30px;
+  text-align: center;
+  
+}
+
+
+#top-section h1 {
+  position: relative;
+  display: inline-block;
+  color: #3b04ff;
+  font-size: 50px;
+  
+}
+
+
+#top-section h1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(60deg, transparent, #ffffff, transparent);
+  animation: shine 5s linear infinite;
+  border-radius: 30px;
+  
+}
+
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+  background-color: #e2eff0;
+ 
+}
+
+
+.row {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+  gap: 50px
+}
+
+
+.card {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  padding: 10px;
+  text-align: center;
+  background-color: #cbf7f7;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+  font-size: 18px;
+}
+
+
+.card-name-button {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  padding: 8px 15px;
+  background-color: #ff9800; 
+  color: #fff;
+  font-weight: bold;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  z-index: 1;
+  border: none;
+}
+
+
+.card img {
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+
+.card:hover img{
+  transform: scale(1.05);
+}
+
+
+.card-name {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+
+.selected-players {
+  width: 280px;
+  height: 380px; 
+  display: flex;
+  top: 25px;
+  right: 10px;
+  background-color: #fcc6f0;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  flex-direction: column;
+  overflow: hidden;
+}
+
+
+.selected-players h2 {
+  margin-top: 0;
+  font-size: 25px;
+  text-align: center;
+}
+
+
+.selected-players-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+  overflow: auto;
+
+}
+
+
+.selected-player-name {
+  margin-bottom: 15px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+ 
+}
+
+
+.selected-player-name::before {
+  content: "";
+  background-color: #ff00c3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  text-align: center;
+  margin-right: 10px;
+
+}
+
+
+.selected-player-name span {
+  margin-left: 5px;
+}
+
+
+.notification-bar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 999;
+  overflow: hidden;
+}
+
+
+.wave-animation {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to right, #3b04ff, #16f342, #f44336);
+  animation: wave 2s linear infinite;
+}
+
+
+@keyframes wave {
+  0% {
+    transform: translateY(-100%);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+
+.notification-text {
+  position: relative;
+  color: #000000;
+  font-size: 23px;
+  font-weight: bold;
+  padding: 15px;
+  margin: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+.selected {
+  background-color: #e94f4f; 
+  color: #fff;
+  border: 1px solid black;
+}
+
+
+.calculator {
+  width: 320px;
+  padding: 5px;
+  background-color: #ffcc32;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  font-size: 19px;
+}
+
+
+.calculator h2 {
+  margin-bottom: 5px;
+  color: #000000;
+  text-align: center;
+  height: 40px;
+  background: #e4fa3a;
+  border-radius: 40%;
+ 
+}
+
+
+.input-group {
+  margin-bottom: 10px;
+}
+
+
+.input-group label {
+  display: block;
+  margin-bottom: 9px;
+  color: #1100ff;
+  font-weight: bold;
+}
+
+
+.input-group input {
+  width: 80%;
+  padding: 5px 28px;
+  border: 2px solid #e06868;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+
+.input-group input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+
+.calculateButton {
+  padding: 10px 38%;
+  background-color: #fb0000;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;  
+  margin-left: 10px;
+}
+
+
+.calculateButton:hover {
+  background-color: #940202a4;
+}
+
+
+.multiplied-value{
+  padding-bottom: 20px;
+  font-weight: bold;
+  font-size: 20px;
+
+}
+
+
+.total-money {
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  .row {
+    flex-wrap: wrap;
+  }
+
+  .card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .selected-players {
+    width: 100%;
+    top: auto;
+    right: auto;
+    margin-top: 20px;
+  }
+}
